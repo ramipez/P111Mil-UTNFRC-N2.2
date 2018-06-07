@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class AgenteContacto {
 
-    
-    private Contacto[] sontactos = new Contacto[100];
-    
-    
+    Contacto[] ArrayContactos = new Contacto[1000];
+
+    int contador = 0;
+
     public void crearContacto() {
 
         Scanner sc = new Scanner(System.in);
@@ -28,9 +28,9 @@ public class AgenteContacto {
         System.out.println("Por favor ingrese la fecha de nacimiento: ");
         String Fechadenacimiento = sc.nextLine();
 
-        
-        contactos[0]=C;
-        
+        ArrayContactos[contador] = C;
+
+        contador++;
 
     }
 
