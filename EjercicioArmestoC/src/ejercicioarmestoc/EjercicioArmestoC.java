@@ -5,8 +5,8 @@
  */
 package ejercicioarmestoc;
 
-import java.util.Scanner;
-
+import java.util.*;
+        
 /**
  *
  * @author alumno
@@ -20,7 +20,8 @@ public class EjercicioArmestoC {
         // TODO code application logic here
         
         Scanner sc=new Scanner(System.in);
-        
+        AgendaTelefonica t=new AgendaTelefonica();
+        int c=0;
         System.out.println("Ingresando Al Menu de opciones");
         System.out.println("1- Agregar un contacto:");
         System.out.println("2- Actualizar los Datos de un Contacto");
@@ -37,15 +38,8 @@ public class EjercicioArmestoC {
         while(op>=1 && op<=8){
         switch(op){
                 case 1:
-                        System.out.println("Ingrese Dni contacto:");
-                        int dni=sc.nextInt();
-                        System.out.println("Ingrese Nombre del Contacto:");
-                        String Nombre=sc.nextLine();
-                        System.out.println("Ingrese Apellido:");
-                        String Apellido=sc.nextLine();
-                        System.out.println("Ingrese Direccion:");
-                        String Dir=sc.nextLine();
-                        System.out.println("ingrese ");
+                        t.add(c);
+                        c++;
                     break;
                 case 2:
                     break;

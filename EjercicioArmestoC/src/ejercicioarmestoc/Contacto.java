@@ -15,6 +15,7 @@ public class Contacto {
  String Apellido;
  String Direccion;
  String FechaNac;
+ Telefono tel;
  
 
     public Contacto() {
@@ -23,16 +24,24 @@ public class Contacto {
     Apellido="";
     Direccion="";
     FechaNac="";   
-  
+    tel=null;
     }
 
-    public Contacto(int Dni, String Nombre, String Apellido, String Direccion, String FechaNac) {
+    public Contacto(int Dni, String Nombre, String Apellido, String Direccion, String FechaNac, Telefono tel) {
         this.Dni = Dni;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Direccion = Direccion;
         this.FechaNac = FechaNac;
-      
+        this.tel=tel;
+    }
+
+    public Telefono getTel() {
+        return tel;
+    }
+
+    public void setTel(Telefono tel) {
+        this.tel = tel;
     }
 
 
@@ -80,7 +89,7 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto{" + "Dni=" + Dni + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Direccion=" + Direccion + ", FechaNac=" + FechaNac +  '}';
+        return "Contacto{" + "Dni=" + Dni + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Direccion=" + Direccion + ", FechaNac=" + FechaNac + ", tel=" + tel + '}';
     }
 
     
