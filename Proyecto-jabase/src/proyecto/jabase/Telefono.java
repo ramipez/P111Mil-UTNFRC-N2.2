@@ -7,7 +7,7 @@ package proyecto.jabase;
 
 /**
  *
- * @author puto el que lee
+ * @author puto el que lee2
  */
 public class Telefono
 {

@@ -7,7 +7,7 @@ package proyecto.jabase;
 
 /**
  *
- * @author busca en telefono
+ * @author busca en telefono1
  */
 import java.util.Date;
 public class Contacto

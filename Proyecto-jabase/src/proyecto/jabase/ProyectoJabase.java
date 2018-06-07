@@ -7,7 +7,7 @@ package proyecto.jabase;
 
 /**
  *
- * @author Busca en contacto
+ * @author Busca en contacto3
  */
 import java.util.Scanner;
 public class ProyectoJabase
