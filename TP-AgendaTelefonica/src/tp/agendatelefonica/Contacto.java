@@ -12,9 +12,25 @@ public class Contacto {
     private int Dni;
     private String Direccion;
     private String Fechadenacimiento;
+
+    @Override
+    public String toString() {
+        return "Contacto{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Dni=" + Dni + ", Direccion=" + Direccion + ", Fechadenacimiento=" + Fechadenacimiento + '}';
+    }
     
     public Contacto() {
     
+    }
+    
+    
+    public void Contacto(){
+    
+            this.Nombre = Nombre;
+            this.Apellido = Apellido;
+            this.Dni = Dni;
+            this.Direccion = Direccion;
+            this.Fechadenacimiento = Fechadenacimiento;
+            
     }
 
     public String getNombre() {
