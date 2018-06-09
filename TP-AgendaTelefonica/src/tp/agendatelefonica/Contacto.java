@@ -1,10 +1,6 @@
 
 package tp.agendatelefonica;
 
-import java.text.SimpleDateFormat;
-import java.util.regex.Pattern;
-
-
 public class Contacto {
     
     private String Nombre;
@@ -12,24 +8,23 @@ public class Contacto {
     private int Dni;
     private String Direccion;
     private String Fechadenacimiento;
+    private Telefono[] telefono;
 
-    @Override
-    public String toString() {
-        return "Contacto{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Dni=" + Dni + ", Direccion=" + Direccion + ", Fechadenacimiento=" + Fechadenacimiento + '}';
-    }
-    
+        
     public Contacto() {
     
     }
     
     
-    public void Contacto(){
+    public Contacto(String nombre, String apellido, int dni,String direccion, String fechaNacimiento){
     
-            this.Nombre = Nombre;
-            this.Apellido = Apellido;
-            this.Dni = Dni;
-            this.Direccion = Direccion;
-            this.Fechadenacimiento = Fechadenacimiento;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Dni = dni;
+            this.Direccion = direccion;
+            this.Fechadenacimiento = fechaNacimiento;
+            
+            telefono = new Telefono[5];
             
     }
 
@@ -73,7 +68,14 @@ public class Contacto {
         this.Fechadenacimiento = Fechadenacimiento;
     }
     
-   
+    public Telefono[] getTelefonos() {
+        return telefono;
+    }
+    
+   @Override
+    public String toString() {
+        return "Contacto{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Dni=" + Dni + ", Direccion=" + Direccion + ", Fechadenacimiento=" + Fechadenacimiento + '}';
+    }
     
     
 }

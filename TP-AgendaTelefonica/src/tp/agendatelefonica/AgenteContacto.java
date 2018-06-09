@@ -1,43 +1,40 @@
 package tp.agendatelefonica;
 
-import java.util.Scanner;
-
 public class AgenteContacto {
 
-    Contacto[] ArrayContactos = new Contacto[1000];
+    private static Contacto[] ArrayContactos = new Contacto[1000];
 
-    int contador = 0;
+    private static int contador = 0;
 
-    public void crearContacto() {
+    public static void agregarContacto(Contacto contacto) {
 
-        Scanner sc = new Scanner(System.in);
-
-        Contacto C = new Contacto();
-
-        System.out.println("Por favor ingrese el nombre: ");
-        String Nombre = sc.nextLine();
-        C.setNombre(Nombre);
-        
-        System.out.println("Por favor ingrese el apellido: ");
-        String Apellido = sc.nextLine();
-        C.setApellido(Apellido);
-
-        System.out.println("Por favor ingrese el documento: ");
-        int Dni = sc.nextInt();
-        C.setDni(Dni);
-        
-        System.out.println("Por favor ingrese la direccion: ");
-        String Direccion = sc.nextLine();
-        C.setDireccion(Direccion);
-        
-        System.out.println("Por favor ingrese la fecha de nacimiento: ");
-        String Fechadenacimiento = sc.nextLine();
-        C.setFechadenacimiento(Fechadenacimiento);
-
-        ArrayContactos[contador] = C;
-
+        ArrayContactos[contador] = contacto;
         contador++;
+    }
+    
+    public static void agregarTelefono(Contacto contacto, Telefono telefono) {
 
+        contacto.getTelefonos()[0] = telefono;
+        
+    }
+    
+    
+    public void actualizarContacto(){
+    
     }
 
+    static void eliminarContacto(){
+    
+        
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
