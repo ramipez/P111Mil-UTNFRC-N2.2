@@ -7,8 +7,9 @@ package proyecto.jabase;
 
 /**
  *
- * @author alumno
+ * @author Busca en contacto3
  */
+import java.util.Scanner;
 public class ProyectoJabase
 {
 
@@ -17,7 +18,18 @@ public class ProyectoJabase
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+    Scanner sc = new Scanner (System.in);
+    
+        System.out.println("Bienvenido a agenda telefonica, ingrese una opcion para continuar");
+        System.out.println("1) Agregar un nuevo contacto");
+        System.out.println("2) Actualizar datos de un contacto");
+        System.out.println("3) Eliminar un contacto");
+        System.out.println("4) Buscar contacto por dni");
+        System.out.println("5) Buscar contacto por numero de telefono");
+        System.out.println("6) Buscar contacto por nombre");
+        System.out.println("7) Listar contactos de A -Z");
+        System.out.println("8) Contactos que cumplen los proximos dias");
+        
     }
     
 }
