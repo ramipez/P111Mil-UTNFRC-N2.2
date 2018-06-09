@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ejercicioarmestoc;
-
+import java.util.*;
 /**
  *
  * @author alumno
@@ -14,20 +14,19 @@ public class Contacto {
  String Nombre;
  String Apellido;
  String Direccion;
- String FechaNac;
- Telefono tel;
+ Date FechaNac;
+ Telefono[] tel;
  
 
     public Contacto() {
     Dni=0;
     Nombre="";
     Apellido="";
-    Direccion="";
-    FechaNac="";   
+    Direccion="";   
     tel=null;
     }
 
-    public Contacto(int Dni, String Nombre, String Apellido, String Direccion, String FechaNac, Telefono tel) {
+    public Contacto(int Dni, String Nombre, String Apellido, String Direccion, Date FechaNac, Telefono[] tel) {
         this.Dni = Dni;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -35,12 +34,12 @@ public class Contacto {
         this.FechaNac = FechaNac;
         this.tel=tel;
     }
-
-    public Telefono getTel() {
-        return tel;
+    
+    public Telefono[] getTel() {
+          return tel;
     }
 
-    public void setTel(Telefono tel) {
+    public void setTel(Telefono[] tel) {
         this.tel = tel;
     }
 
@@ -79,13 +78,14 @@ public class Contacto {
         this.Direccion = Direccion;
     }
 
-    public String getFechaNac() {
+    public Date getFechaNac() {
         return FechaNac;
     }
 
-    public void setFechaNac(String FechaNac) {
+    public void setFechaNac(Date FechaNac) {
         this.FechaNac = FechaNac;
     }
+
 
     @Override
     public String toString() {

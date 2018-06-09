@@ -10,18 +10,19 @@ package ejercicioarmestoc;
  * @author alumno
  */
 public class Telefono {
+
     int TipoContacto;
-int Nrotelefono;
+    int Nrotelefono;
 
     public Telefono(int TipoContacto, int Nrotelelefono) {
         this.TipoContacto = TipoContacto;
-        this.Nrotelefono = Nrotelefono;
+        this.Nrotelefono = Nrotelelefono;
     }
 
     public Telefono() {
-        Nrotelefono=0;
-    TipoContacto=0;
-    
+        Nrotelefono = 0;
+        TipoContacto = 0;
+
     }
 
     public int getTipoContacto() {
@@ -42,7 +43,7 @@ int Nrotelefono;
 
     @Override
     public String toString() {
-        return "AgendaTelefonica{" + "TipoContacto=" + TipoContacto + ", Nrotelefono=" + Nrotelefono + '}';
+        return "Telefono{" + "TipoContacto=" + TipoContacto + ", Nrotelefono=" + Nrotelefono + '}';
     }
 
 }

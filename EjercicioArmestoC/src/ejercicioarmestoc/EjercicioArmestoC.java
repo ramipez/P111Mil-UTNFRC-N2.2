@@ -5,6 +5,7 @@
  */
 package ejercicioarmestoc;
 
+import java.text.ParseException;
 import java.util.*;
         
 /**
@@ -16,10 +17,11 @@ public class EjercicioArmestoC {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         // TODO code application logic here
         
         Scanner sc=new Scanner(System.in);
+        Scanner Sc=new Scanner(System.in);
         AgendaTelefonica t=new AgendaTelefonica();
         int c=0;
         System.out.println("Ingresando Al Menu de opciones");
@@ -37,23 +39,42 @@ public class EjercicioArmestoC {
         int op=sc.nextInt();
         while(op>=1 && op<=8){
         switch(op){
-                case 1:
+                case 1: 
+                       
                         t.add(c);
                         c++;
                     break;
                 case 2:
+                    System.out.println("Ingrese metodo de busqueda de Contacto para Actualizar: 1-Nombre, 2-Dni, 3-Numero Telefono");
+                    int opci=sc.nextInt();
+                    t.actualizar(opci);
                     break;
-                case 3:
+                case 3: 
+                    System.out.println(" Elija metodo de busqueda para brorrado: 1- nombre, 2-Dni, 3-Numero Telefono:");
+                        int opc=sc.nextInt();
+                        t.Borrar(opc);
                     break;
                 case 4:
+                    System.out.println("Ingrese Dni");
+                    int DNI=sc.nextInt();
+                    t.buscarporDni(DNI);
                     break;
                 case 5:
+                    System.out.println("Ingrese Numero de Telefono");
+                    int tel=sc.nextInt();
+                    t.buscarporTelefono(tel);
                     break;
                 case 6:
+                    System.out.println("Ingrese Nombre");
+                    String nom=Sc.nextLine();
+                    t.buscarporNombre(nom);
                     break;
-                case 7:
+                case 7: 
+                    System.out.println("Listando Contactos");
+                    t.OrdenareImprimir();
                     break;
                 case 8:
+                    
                     break;
                 default:
                     break;
