@@ -31,18 +31,22 @@ public class AgendaTelefonica {
         System.out.println("ingrese Direccion");
         String direccion = Sc.nextLine();
         System.out.println("Ingrese Fecha Nacimiento, ingresar de forma DD/MM/YYYY");
-        Date FechaNac = new SimpleDateFormat("dd/mm/yyyy").parse(SC.nextLine());
+        Date FechaNac = new SimpleDateFormat("dd/MM/yyyy").parse(SC.nextLine());
         System.out.println("Ingrese Cantidad de Telefonos a Ingresar");
         int ct = sc.nextInt();
         Telefono[] tel = new Telefono[ct];
         for (int into = 0; into < tel.length; into++) {
             System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
             int t = sc.nextInt();
+            while(t<0&&t>5){
+                System.out.println("Ingrese Valor VAlido");
+                t=sc.nextInt();
+            }
             System.out.println("ingrese nro telefono;");
             int nro = sc.nextInt();
             tel[into] = new Telefono(t, nro);
         }
-
+        
         c[i] = new Contacto(dni, Nombre, Apellido, direccion, FechaNac, tel);
 
         System.out.println("Contacto creado: " + c[i].toString());
@@ -50,44 +54,51 @@ public class AgendaTelefonica {
     }
 
     public void buscarporDni(int Dni) {
+        String aux="";
         for (int i = 0; i < c.length; i++) {
           if(c[i]!=null){
             if (c[i].getDni() == Dni) {
-                System.out.println(c[i].toString());
-
+                aux=c[i].toString();
+                break;
+            }else{
+                aux="DAto no encontrado";
             }
-            
-                else{
-                    System.out.println("DAto no encontrado");
-                }
         }}
+        System.out.println(aux);
     }
 
     public void buscarporNombre(String nombre) {
+        String aux="";
         for (int i = 0; i < c.length; i++) {
             if(c[i]!=null){
             if (c[i].getNombre().equalsIgnoreCase(nombre)) {
-                System.out.println(c[i].toString());
+                aux=c[i].toString();
+                break;
+            }
+            else{
+                aux="DAto no encontrado";
             }
             
-                else{
-                    System.out.println("DAto no encontrado");
-                }}
+
+            }        }
+        System.out.println(aux);
         }
-    }
 
     public void buscarporTelefono(int NroTelefono) {
+       String aux="";
         for (int i = 0; i < c.length; i++) {
             if(c[i]!=null){
             for (int j = 0; j < c[i].getTel().length; j++) {
                 if (c[i].getTel()[j].Nrotelefono == NroTelefono) {
-                    System.out.println(c[i].toString());
-                }
-                else{
-                    System.out.println("DAto no encontrado");
-                }
+                    aux=c[i].toString();
+                    break;
+                }else{
+                aux="DAto no encontrado";
             }
-        }}
+                
+            }
+            }}
+        System.out.println(aux);
     }
 
     public void Borrar(int op) {
@@ -109,6 +120,7 @@ public class AgendaTelefonica {
                         }
 
                     }
+                    
 
                     break;
                 }}
@@ -160,6 +172,7 @@ public class AgendaTelefonica {
 
     public void actualizar(int op) throws ParseException {
         Scanner sc = new Scanner(System.in);
+        Scanner SC=new Scanner(System.in);
         switch (op) {
             case 1:
                 System.out.println("Ingrese Nombre");
@@ -179,56 +192,40 @@ public class AgendaTelefonica {
                                 break;
                             case 2:
                                 System.out.println("Ingrese Nuevo Nombre");
-                                String nomb = sc.nextLine();
+                                String nomb = SC.nextLine();
                                 c[i].setNombre(nomb);
                                 break;
                             case 3:
                                 System.out.println("Ingrese Nuevo Apellido");
-                                String ape = sc.nextLine();
+                                String ape = SC.nextLine();
                                 c[i].setApellido(ape);
                                 break;
                             case 4:
                                 System.out.println("Ingrese Nueva Direcion");
-                                String dir = sc.nextLine();
+                                String dir = SC.nextLine();
                                 c[i].setDireccion(dir);
                                 break;
                             case 5:
                                 System.out.println("Ingrese nueva Fecha de Nacimiento");
-                                Date na = new SimpleDateFormat("dd/mm/yyyy").parse(sc.nextLine());
+                                Date na = new SimpleDateFormat("dd/MM/yyyy").parse(sc.nextLine());
                                 c[i].setFechaNac(na);
                                 break;
-                            case 6:
-                                System.out.println("Desea Actualizar un telefono o agregar uno nuevo: (1-nuevo, 2-Actualizar)");
-                                int k = sc.nextInt();
-                                if (k == 1) {
-                                    int asd = c[i].getTel().length;
-                                    System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
-                                    int t = sc.nextInt();
-                                    System.out.println("ingrese nro telefono;");
-                                    int nro = sc.nextInt();
-                                    Telefono te = new Telefono(t, nro);
-                                    c[i].tel[asd] = te;
-                                } else if (k == 2) {
-                                    System.out.println("Ingrese Numero a Actualizar");
-                                    int nroc = sc.nextInt();
-                                    for (int j = 0; j < c[i].getTel().length; j++) {
-                                        if (c[i].getTel()[j].Nrotelefono == nroc) {
-                                            System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
-                                            int t = sc.nextInt();
-                                            System.out.println("ingrese nro telefono;");
-                                            int nro = sc.nextInt();
-                                            Telefono telefon = new Telefono(t, nro);
-                                            c[i].tel[j] = telefon;
+                            case 6:System.out.println("Ingrese Numero a Actualizar");
+                                        int nroc = sc.nextInt();
+                                        for (int je = 0; je < c[i].getTel().length; je++) {
+                                            if (c[i].getTel()[je].Nrotelefono == nroc) {
+                                                System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
+                                                int t = sc.nextInt();
+                                                System.out.println("ingrese nro telefono;");
+                                                int nross = sc.nextInt();
+                                                Telefono telefon = new Telefono(t, nross);
+                                                c[i].tel[je] = telefon;
 
-                                        }
-                                    }
-                                } else {
-                                    System.out.println("Opcion no valida");
-                                }
+                                            
 
-                        }
+                        
 
-                    }}
+                    }}}}}
 
                     break;
                 }
@@ -251,56 +248,41 @@ public class AgendaTelefonica {
                                 break;
                             case 2:
                                 System.out.println("Ingrese Nuevo Nombre");
-                                String nomb = sc.nextLine();
+                                String nomb = SC.nextLine();
                                 c[i].setNombre(nomb);
                                 break;
                             case 3:
                                 System.out.println("Ingrese Nuevo Apellido");
-                                String ape = sc.nextLine();
+                                String ape = SC.nextLine();
                                 c[i].setApellido(ape);
                                 break;
                             case 4:
                                 System.out.println("Ingrese Nueva Direcion");
-                                String dir = sc.nextLine();
+                                String dir = SC.nextLine();
                                 c[i].setDireccion(dir);
                                 break;
                             case 5:
                                 System.out.println("Ingrese nueva Fecha de Nacimiento");
-                                Date na = new SimpleDateFormat("dd/mm/yyyy").parse(sc.nextLine());
+                                Date na = new SimpleDateFormat("dd/MM/yyyy").parse(sc.nextLine());
                                 c[i].setFechaNac(na);
                                 break;
                             case 6:
-                                System.out.println("Desea Actualizar un telefono o agregar uno nuevo: (1-nuevo, 2-Actualizar)");
-                                int k = sc.nextInt();
-                                if (k == 1) {
-                                    int asd = c[i].getTel().length;
-                                    System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
-                                    int t = sc.nextInt();
-                                    System.out.println("ingrese nro telefono;");
-                                    int nro = sc.nextInt();
-                                    Telefono te = new Telefono(t, nro);
-                                    c[i].tel[asd] = te;
-                                } else if (k == 2) {
-                                    System.out.println("Ingrese Numero a Actualizar");
-                                    int nroc = sc.nextInt();
-                                    for (int j = 0; j < c[i].getTel().length; j++) {
-                                        if (c[i].getTel()[j].Nrotelefono == nroc) {
-                                            System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
-                                            int t = sc.nextInt();
-                                            System.out.println("ingrese nro telefono;");
-                                            int nro = sc.nextInt();
-                                            Telefono telefon = new Telefono(t, nro);
-                                            c[i].tel[j] = telefon;
+                               System.out.println("Ingrese Numero a Actualizar");
+                                        int nroc = sc.nextInt();
+                                        for (int je = 0; je < c[i].getTel().length; je++) {
+                                            if (c[i].getTel()[je].Nrotelefono == nroc) {
+                                                System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
+                                                int t = sc.nextInt();
+                                                System.out.println("ingrese nro telefono;");
+                                                int nross = sc.nextInt();
+                                                Telefono telefon = new Telefono(t, nross);
+                                                c[i].tel[je] = telefon;
 
-                                        }
-                                    }
-                                } else {
-                                    System.out.println("Opcion no valida");
-                                }
+                                            
 
-                        }
+                        
 
-                    }
+                                            }}}}
                     }
                     //c[i]
                 }
@@ -324,36 +306,25 @@ public class AgendaTelefonica {
                                     break;
                                 case 2:
                                     System.out.println("Ingrese Nuevo Nombre");
-                                    String nomb = sc.nextLine();
+                                    String nomb = SC.nextLine();
                                     c[i].setNombre(nomb);
                                     break;
                                 case 3:
                                     System.out.println("Ingrese Nuevo Apellido");
-                                    String ape = sc.nextLine();
+                                    String ape = SC.nextLine();
                                     c[i].setApellido(ape);
                                     break;
                                 case 4:
                                     System.out.println("Ingrese Nueva Direcion");
-                                    String dir = sc.nextLine();
+                                    String dir = SC.nextLine();
                                     c[i].setDireccion(dir);
                                     break;
                                 case 5:
                                     System.out.println("Ingrese nueva Fecha de Nacimiento");
-                                  Date na = new SimpleDateFormat("dd/mm/yyyy").parse(sc.nextLine());
+                                  Date na = new SimpleDateFormat("dd/MM/yyyy").parse(sc.nextLine());
                                     c[i].setFechaNac(na);
                                     break;
                                 case 6:
-                                    System.out.println("Desea Actualizar un telefono o agregar uno nuevo: (1-nuevo, 2-Actualizar)");
-                                    int k = sc.nextInt();
-                                    if (k == 1) {
-                                        int asd = c[i].getTel().length;
-                                        System.out.println("Ingrese Tipo de telefono (1-CASA|2-TRABAJO|3-MOVIL|4-Principal|5-OTRO)");
-                                        int t = sc.nextInt();
-                                        System.out.println("ingrese nro telefono;");
-                                        int nross = sc.nextInt();
-                                        Telefono te = new Telefono(t, nro);
-                                        c[i].tel[asd] = te;
-                                    } else if (k == 2) {
                                         System.out.println("Ingrese Numero a Actualizar");
                                         int nroc = sc.nextInt();
                                         for (int je = 0; je < c[i].getTel().length; je++) {
@@ -367,9 +338,7 @@ public class AgendaTelefonica {
 
                                             }
                                         }
-                                    } else {
-                                        System.out.println("Opcion no valida");
-                                    }
+                                    
 
                             }
                         }

@@ -89,8 +89,11 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto{" + "Dni=" + Dni + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Direccion=" + Direccion + ", FechaNac=" + FechaNac + ", tel=" + tel + '}';
+     String str = "Contacto{" + "Dni=" + Dni + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Direccion=" + Direccion + ", FechaNac=" + FechaNac + ", tel=[";
+        for(int i=0;i<tel.length;i++){
+            str += tel[i];
+        }
+        return str+ " ] }";
     }
-
     
 }
