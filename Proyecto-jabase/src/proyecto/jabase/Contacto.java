@@ -16,21 +16,28 @@ public class Contacto
     public String Apellido;
     public String Direccion;
     public int Altura;
-    public long dni;
-    public Date nacimiento;
+    public long Dni;
+    public Date Nacimiento;
     
     
-    public Contacto (String Nombre, String Apellido, String Direccion, int altura, long dni, Date nacimiento){
+    public Contacto (String Nombre, String Apellido, String Direccion, int altura, long Dni, Date Nacimiento){
         
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Direccion = Direccion;
         this.Altura = altura;
-        this.dni = dni;
-        this.nacimiento = nacimiento;
+        this.Dni = Dni;
+        this.Nacimiento = Nacimiento;
      
     }
     
+    public Contacto(){
+        Nombre="";
+        Apellido="";
+        Direccion ="";
+        Altura = 0;
+        Dni= 0;
+    }
     public String getNombre() {
         return Nombre;
     }
@@ -67,30 +74,28 @@ public class Contacto
         this.Altura = Altura;
     }
 
-    public long getDni()
-    {
-        return dni;
+    public long getDni() {
+        return Dni;
     }
 
-    public void setDni(long dni)
-    {
-        this.dni = dni;
+    public void setDni(long Dni) {
+        this.Dni = Dni;
     }
 
-    public Date getNacimiento()
-    {
-        return nacimiento;
+    public Date getNacimiento() {
+        return Nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento)
-    {
-        this.nacimiento = nacimiento;
+    public void setNacimiento(Date Nacimiento) {
+        this.Nacimiento = Nacimiento;
     }
+
+  
 
     @Override
     public String toString()
     {
-        return "Contacto{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Direccion=" + Direccion + ", Altura=" + Altura + ", dni=" + dni + ", nacimiento=" + nacimiento + '}';
+        return "Contacto{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Direccion=" + Direccion + ", Altura=" + Altura + ", dni=" + Dni + ", nacimiento=" + Nacimiento + '}';
     }
 
     
