@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Contacto {
   
- int Dni;
- String Nombre;
+ private int Dni;
+ private String Nombre;
  String Apellido;
  String Direccion;
  Date FechaNac;
