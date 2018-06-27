@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Contacto {
   
- int Dni;
- String Nombre;
- String Apellido;
- String Direccion;
- Date FechaNac;
- Telefono[] tel;
+ private int Dni;
+ private String Nombre;
+ private String Apellido;
+ private String Direccion;
+ private Date FechaNac;
+ private Telefono[] tel;
  
 
     public Contacto() {
