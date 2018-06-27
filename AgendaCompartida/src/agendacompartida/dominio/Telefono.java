@@ -3,7 +3,8 @@ package agendacompartida.dominio;
 public class Telefono {
 
     private String tipoTelefono;
-
+    private int numero;
+    
     public Telefono() {
 
     }
@@ -16,4 +17,12 @@ public class Telefono {
         this.tipoTelefono = tipoTelefono;
     }
     
+    public int getNumero(){
+        return numero;
+    }
+    
+    public void setNumero(int numero){
+        this.numero = numero;
+    }
 }
+
