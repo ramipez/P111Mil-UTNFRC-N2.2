@@ -1,6 +1,7 @@
 
 package agendacompartida.dao;
 
-public class ContactoDao {
+public class ContactoDao
+{
     
 }
