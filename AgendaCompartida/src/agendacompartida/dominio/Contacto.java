@@ -8,8 +8,8 @@ public class Contacto {
  private String Nombre;
  private String Apellido;
  private String Direccion;
- Date FechaNac;
- Telefono[] tel;
+ private Date FechaNac;
+ private Telefono[] tel;
  
 
     public Contacto() {
