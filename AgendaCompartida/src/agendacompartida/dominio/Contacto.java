@@ -5,11 +5,11 @@ import java.util.Date;
 public class Contacto {
   
  private int Dni;
- private String Nombre;
- private String Apellido;
- private String Direccion;
- private Date FechaNac;
- private Telefono[] tel;
+ String Nombre;
+ String Apellido;
+ String Direccion;
+ Date FechaNac;
+ Telefono[] tel;
  
 
     public Contacto() {
