@@ -15,8 +15,7 @@ public class ContactoDao
                   for(int i=0;i<tel.length;i++){
             sql+= tel[i];
         }
-         sql+=");";         
-                        
+         sql+=");";                                 
         con.ejecutarSQL(sql);
     }
     
