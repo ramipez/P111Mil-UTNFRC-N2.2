@@ -5,6 +5,7 @@ public class Telefono {
     private String tipoTelefono;
     private int numero;
     private String prefijo;
+    private int id;
     
     public Telefono() {
 
@@ -32,7 +33,11 @@ public class Telefono {
         this.prefijo = prefijo;
     }
     
-    
-    
+    public int getId(){
+        return id;
+    }
+    public void getId(int id){
+        this.id = id;
+    }
 }
 
