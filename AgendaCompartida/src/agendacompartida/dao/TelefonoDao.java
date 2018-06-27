@@ -10,16 +10,17 @@ import java.sql.SQLException;
  */
 public class TelefonoDao {
 
-    Statement statement = connection.createStatement();
+    Statement statement = Connection.createStatement();
 
-    statement.executeUpdate("INSERT INTO Telefonos (tipoTelefono, numero, prefijo) VALUES (1, 3516086969, '+549');");
+    statement.executeUpdate("INSERT INTO Telefonos (id, tipoTelefono, numero, prefijo) VALUES (1,1, 3516086969, '+549');");
     
     ResultSet rs = statement.executeQuery("Select * from Telefonos");
 
     while (rs.next()){
         
+            System.out.println(rs.getId(1));
             System.out.println(rs.getTipoTelefono(1));
-            System.out.println(rs.getNumero("id"));
+            System.out.println(rs.getNumero());
             System.out.println(rs.getPrefijo());
 
         }
