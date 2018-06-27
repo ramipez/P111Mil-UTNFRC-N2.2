@@ -3,7 +3,7 @@ package agendacompartida.dao;
 
 public class ContactoDao
 {
-public void contacto(String nombre){
+public void eliminarContacto (String id){
 	
 		
 		}    
