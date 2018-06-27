@@ -6,7 +6,7 @@ public class Contacto {
   
  private int Dni;
  private String Nombre;
- String Apellido;
+ private String Apellido;
  String Direccion;
  Date FechaNac;
  Telefono[] tel;
