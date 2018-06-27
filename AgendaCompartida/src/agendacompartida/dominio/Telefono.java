@@ -4,6 +4,7 @@ public class Telefono {
 
     private String tipoTelefono;
     private int numero;
+    private String prefijo;
     
     public Telefono() {
 
@@ -24,5 +25,14 @@ public class Telefono {
     public void setNumero(int numero){
         this.numero = numero;
     }
+    public String getPrefijo(){
+        return prefijo;
+    }
+    public void setPrefijo(String prefijo){
+        this.prefijo = prefijo;
+    }
+    
+    
+    
 }
 
