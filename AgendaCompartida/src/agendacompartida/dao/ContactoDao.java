@@ -24,6 +24,31 @@ public class ContactoDao
 	
 		
 		} 
+     public ArrayList<Contacto>  buscarContactoNombre(String nombre)
+    {
+        int dni=0;
+        String nom="", ape="";
+        ArrayList<Contacto>  lista = new ArrayList<Contacto>();
+        try{
+            ResultSet s = con.consultar("select * fron Contactos where nombre = '"+nombre+"';");
+            while(s.next())
+            {
+                Contacto aux = new Contacto();
+                aux.setApellido(s.getString("Apellido"));
+                aux.setNombre(s.getString("Nombre"));
+                aux.setDni(s.getInt("Dni"));
+                aux.setDireccion(s.getString("Direccion"));
+                aux.setFechaNac(s.getDate("fecha"));
+                lista.add(aux);
+            }
+            
+        return lista;    
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
    
 =======
 	con=Conexion.getInstance();

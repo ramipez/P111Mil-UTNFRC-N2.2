@@ -42,16 +42,17 @@ public class Conexion
       }
     }
     
-    public void consultar(String sql)
+    public ResultSet consultar(String sql)
     {
         try{
         Statement st = cn.createStatement();
         ResultSet consulta = st.executeQuery(sql);
-        //falta terminar...
+        return consulta;
         }catch(Exception e)
         {
             e.printStackTrace();
         }
+        return null; 
     }
             
     
