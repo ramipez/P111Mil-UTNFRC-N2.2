@@ -12,10 +12,9 @@ public class ContactoDao
     public void insertarDatos(int dni, String nombre, String apellido, String direccion, Date fechaNac, Telefono[] tel){
         Conexion con=Conexion.getInstance();
         String sql;
-        Contacto c = null;
         sql="insert into Contacto values("+dni+","+nombre+","+apellido+","+direccion+","+fechaNac+",";
-                  for(int i=0;i<c.tel.length;i++){
-            sql+= c.tel[i];
+                  for(int i=0;i<tel.length;i++){
+            sql+= tel[i];
         }
          sql+=");";                                 
         con.ejecutarSQL(sql);
