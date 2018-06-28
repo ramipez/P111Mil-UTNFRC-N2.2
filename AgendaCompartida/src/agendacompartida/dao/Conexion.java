@@ -24,7 +24,7 @@ public class Conexion
         }
         return instance;
     }
-    public Conexion()
+    private Conexion()
     {
         try{
             cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/agendatelefonos","root","");

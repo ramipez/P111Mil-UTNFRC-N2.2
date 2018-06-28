@@ -4,10 +4,11 @@ package agendacompartida.dao;
 import agendacompartida.dominio.Contacto;
 import agendacompartida.dominio.Telefono;
 import java.util.Date;
+import java.sql.*;
 
 public class ContactoDao
 {
-    Conexion con;
+    private Conexion con;
 
     
     public void insertarDatos(int dni, String nombre, String apellido, String direccion, Date fechaNac, Telefono[] tel){
@@ -25,5 +26,14 @@ public class ContactoDao
 	
 		
 		} 
-       }
+    public void buscarContactoNombre(String nombre)
+    {
+        try{
+            Statement st = 
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        
+    }
 }
