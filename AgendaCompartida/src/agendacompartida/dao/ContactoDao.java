@@ -24,4 +24,16 @@ public class ContactoDao
         con.ejecutarSQL(sql);
 	}
     
+    
+    public void actualizarDatos(Contacto contacto, String dni){
+        con = Conexion.getInstance();
+        String sql="update Contacto "
+                + " set nombre= '" + contacto.getNombre() + "'"
+                + " , apellido= '" + contacto.getApellido()+ "'"
+                + " , direccion= '" + contacto.getDireccion()+"'"
+                + " , fechaNac = str_to_date(%d/%m/%Y),(" + contacto.getFechaNac() + ");"
+                + " where dni= " + dni + "; ";
+        con.ejecutarSQL(sql);
+    }
+    
 }
