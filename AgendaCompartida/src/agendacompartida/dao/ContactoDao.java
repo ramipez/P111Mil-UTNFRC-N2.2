@@ -7,10 +7,11 @@ import java.util.Date;
 
 public class ContactoDao
 {
+    Conexion con;
 
     
     public void insertarDatos(int dni, String nombre, String apellido, String direccion, Date fechaNac, Telefono[] tel){
-        Conexion con=Conexion.getInstance();
+        con=Conexion.getInstance();
         String sql;
         Contacto c = null;
         sql="insert into Contacto values("+dni+","+nombre+","+apellido+","+direccion+","+fechaNac+",";
@@ -24,5 +25,6 @@ public class ContactoDao
     public void eliminarContacto (String id){
 	
 		
-		}    
+		} 
+       }
 }
