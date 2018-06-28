@@ -27,6 +27,14 @@ public class TelefonoDao {
         
 
     }
+    public void deleteTelefono(Telefono telefono) {
+
+        conexion.ejecutarSQL("delete from Telefonos"
+                + "delete numero = " + telefono.getNumero()
+                + "delete prefijo = " + telefono.getPrefijo()
+                + "delete tipoTelefono = " + telefono.getTipoTelefono()
+                + "where id_telefonos =" + telefono.getId());
+    }
 }
 /*
     Statement statement = Connection.createStatement();
