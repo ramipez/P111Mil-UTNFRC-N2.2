@@ -19,11 +19,21 @@ public class TelefonoDao {
 
     public void updateTelefono(Telefono telefono) {
         conexion.ejecutarSQL(
-                "update Telefonos "
-                + "set numero = " + telefono.getNumero()
+                " update Telefonos "
+                + " set numero = " + telefono.getNumero()
                 + " , codArea = " + telefono.getPrefijo()
-                +", tipo = "+ telefono.getTipoTelefono());
+                +", tipo = "+ telefono.getTipoTelefono()
+                +" where id_telefonos ="+ telefono.getId());
+        
 
+    }
+    public void deleteTelefono(Telefono telefono) {
+
+        conexion.ejecutarSQL("delete from Telefonos"
+                + "delete numero = " + telefono.getNumero()
+                + "delete prefijo = " + telefono.getPrefijo()
+                + "delete tipoTelefono = " + telefono.getTipoTelefono()
+                + "where id_telefonos =" + telefono.getId());
     }
 }
 /*
