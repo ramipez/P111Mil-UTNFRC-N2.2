@@ -16,17 +16,17 @@ public class TelefonoDao {
     public TelefonoDao(Conexion c) {
         this.conexion = c;
     }
-
+    
     public void updateTelefono(Telefono telefono) {
         conexion.ejecutarSQL(
                 "update Telefonos "
                 + "set numero = " + telefono.getNumero()
                 + " , codArea = " + telefono.getPrefijo()
-                +", tipo = "+ telefono.getTipoTelefono()
-                +"where id_telefonos ="+ telefono.getId());
-        
+                + ", tipo = " + telefono.getTipoTelefono()
+                + "where id_telefonos =" + telefono.getId());
 
     }
+
     public void deleteTelefono(Telefono telefono) {
 
         conexion.ejecutarSQL("delete from Telefonos"
@@ -35,21 +35,11 @@ public class TelefonoDao {
                 + "delete tipoTelefono = " + telefono.getTipoTelefono()
                 + "where id_telefonos =" + telefono.getId());
     }
-}
-/*
-    Statement statement = Connection.createStatement();
 
-    statement.executeUpdate("INSERT INTO Telefonos (id, tipoTelefono, numero, prefijo) VALUES (1,1, 3516086969, '+549');");
-    
-    ResultSet rs = statement.executeQuery("Select * from Telefonos");
+    public void insertarTelefono(Telefono telefono) {
+        String sql ="INSERT INTO Telefonos  (id, tipoTelefono, numero, prefijo) "
+                + " VALUES ("+telefono.getId()+", '" + telefono.getTipoTelefono() +"' , '"+ telefono.getNumero() +"' , '"+ telefono.getPrefijo() + "')";
+        conexion.ejecutarSQL(sql);
 
-    while (rs.next()){
-        
-            System.out.println(rs.getId(1));
-            System.out.println(rs.getTipoTelefono(1));
-            System.out.println(rs.getNumero());
-            System.out.println(rs.getPrefijo());
-
-        }
     }
-*/
+}
