@@ -22,8 +22,10 @@ public class ContactoDao
     }
     
     public void eliminarContacto (String id){
-	
-		
-		} 
-       }
+	con=Conexion.getInstance();
+	String sql;
+        sql= "DELETE * FROM contacto WHERE id= '"+ id +"';";
+        con.ejecutarSQL(sql);
+	}
+    
 }
