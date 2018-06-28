@@ -19,11 +19,11 @@ public class TelefonoDao {
 
     public void updateTelefono(Telefono telefono) {
         conexion.ejecutarSQL(
-                "update Telefonos "
-                + "set numero = " + telefono.getNumero()
+                " update Telefonos "
+                + " set numero = " + telefono.getNumero()
                 + " , codArea = " + telefono.getPrefijo()
                 +", tipo = "+ telefono.getTipoTelefono()
-                +"where id_telefonos ="+ telefono.getId());
+                +" where id_telefonos ="+ telefono.getId());
         
 
     }
