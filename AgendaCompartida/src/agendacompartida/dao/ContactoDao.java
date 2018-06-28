@@ -10,10 +10,10 @@ public class ContactoDao
     Conexion con;
 
     
-    public void insertarDatos(int dni, String nombre, String apellido, String direccion, Date fechaNac, Telefono[] tel){
+    public void insertarDatos(Contacto contacto){
         con=Conexion.getInstance();
         String sql;
-        sql="insert into Contacto values("+dni+","+nombre+","+apellido+","+direccion+","+fechaNac+");";                                 
+        sql="insert into Contacto values("+contacto.getDni()+","+contacto.getNombre()+","+contacto.getApellido()+","+contacto.getDireccion()+",str_to_date('"+contacto.getFechaNac()+"','%d/%m/%Y');";                                 
         con.ejecutarSQL(sql);
     }
     
