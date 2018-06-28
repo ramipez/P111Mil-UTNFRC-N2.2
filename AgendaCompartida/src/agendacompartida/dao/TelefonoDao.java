@@ -22,7 +22,9 @@ public class TelefonoDao {
                 "update Telefonos "
                 + "set numero = " + telefono.getNumero()
                 + " , codArea = " + telefono.getPrefijo()
-                +", tipo = "+ telefono.getTipoTelefono());
+                +", tipo = "+ telefono.getTipoTelefono()
+                +"where id_telefonos ="+ telefono.getId());
+        
 
     }
 }
