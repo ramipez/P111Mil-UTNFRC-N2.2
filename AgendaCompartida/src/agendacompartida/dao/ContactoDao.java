@@ -5,6 +5,7 @@ import agendacompartida.dominio.Contacto;
 import agendacompartida.dominio.Telefono;
 import java.util.Date;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ContactoDao
 {
@@ -23,18 +24,17 @@ public class ContactoDao
     }
     
     public void eliminarContacto (String id){
+<<<<<<< HEAD
 	
 		
 		} 
-    /*public void buscarContactoNombre(String nombre)
-    {
-        try{
-            
-            
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-        
-    }*/
+   
+=======
+	con=Conexion.getInstance();
+	String sql;
+        sql= "DELETE * FROM contacto WHERE id= '"+ id +"';";
+        con.ejecutarSQL(sql);
+	}
+    
+>>>>>>> origin/master
 }
