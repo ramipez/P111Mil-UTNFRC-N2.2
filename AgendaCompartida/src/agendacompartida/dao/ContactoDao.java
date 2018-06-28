@@ -26,14 +26,15 @@ public class ContactoDao
 	
 		
 		} 
-    public void buscarContactoNombre(String nombre)
+    /*public void buscarContactoNombre(String nombre)
     {
         try{
-            Statement st = 
+            
+            
         }catch(Exception e)
         {
             e.printStackTrace();
         }
         
-    }
+    }*/
 }

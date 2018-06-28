@@ -1,7 +1,7 @@
 
 package agendacompartida.dao;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -41,5 +41,18 @@ public class Conexion
         Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
       }
     }
+    
+    public void consultar(String sql)
+    {
+        try{
+        Statement st = cn.createStatement();
+        ResultSet consulta = st.executeQuery(sql);
+        //falta terminar...
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+            
     
 }
