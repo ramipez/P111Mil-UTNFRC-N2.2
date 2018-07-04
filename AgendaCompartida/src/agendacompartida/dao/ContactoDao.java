@@ -15,15 +15,15 @@ public class ContactoDao {
         con.ejecutarSQL(sql);
     }
 
-    public void eliminarContacto(String id) {
+    public void eliminarContacto(int id) {
         con = Conexion.getInstance();
         String sql;
-        sql = "DELETE * FROM contacto WHERE id= '" + id + "';";
+        sql = "DELETE * FROM contacto WHERE dni= '" + id + "';";
         con.ejecutarSQL(sql);
     }
     
     
-    public void actualizarDatos(Contacto contacto, String dni){
+    public void actualizarDatos(Contacto contacto, int dni){
         con = Conexion.getInstance();
         String sql="update Contacto "
                 + " set nombre= '" + contacto.getNombre() + "'"
